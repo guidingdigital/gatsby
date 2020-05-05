@@ -57,7 +57,9 @@ class BlogPostTemplate extends React.Component {
           <main id={`reach-skip-nav`} className="post docSearch-content">
             {/* Add long list of social meta tags */}
             <Helmet>
-              <title>{post.frontmatter.title}</title>
+              <title>
+                {post.frontmatter.seoTitle || post.frontmatter.title}
+              </title>
               <link
                 rel="author"
                 href={`https://gatsbyjs.org${post.frontmatter.author.fields.slug}`}
